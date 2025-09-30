@@ -15,9 +15,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
 @Getter
 @Setter
+@Table(name = "users")
 public class User implements UserDetails{
     
     @Id
@@ -32,22 +32,27 @@ public class User implements UserDetails{
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of();
     }
+
     @Override
     public String getUsername() {
         return null;
     }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
+    
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
+    
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
+    
     @Override
     public boolean isEnabled() {   
         return true;
